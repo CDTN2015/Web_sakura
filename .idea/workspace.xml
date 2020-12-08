@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="af14e4bb-e2d4-488d-9df7-f05aee76ff65" name="默认的" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lF1UqgtLrDAPUqWkDI9HJaIBQI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="新增" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Yucheng Jiang\Desktop\召集令\sakura\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yucheng Jiang\Desktop\召集令\sakura\src\views\sources\images" />
+      <recent name="C:\Users\Yucheng Jiang\Desktop\召集令\sakura\src\views" />
+      <recent name="C:\Users\Yucheng Jiang\Desktop\召集令\sakura\src\sources" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af14e4bb-e2d4-488d-9df7-f05aee76ff65" name="默认的" comment="" />
+      <created>1607178044790</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607178044790</updated>
+      <workItem from="1607178046749" duration="397000" />
+      <workItem from="1607178455962" duration="5074000" />
+      <workItem from="1607233777579" duration="10940000" />
+      <workItem from="1607270686112" duration="632000" />
+      <workItem from="1607276323696" duration="8517000" />
+      <workItem from="1607321754003" duration="27554000" />
+      <workItem from="1607446745483" duration="8652000" />
+      <workItem from="1607455510746" duration="720000" />
+      <workItem from="1607457064166" duration="44000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="372" y="402" key="#ESLint" timestamp="1607182026318">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="372" y="402" key="#ESLint/0.0.1920.1040@0.0.1920.1040" timestamp="1607182026318" />
+    <state x="279" y="228" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1607439351256">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="279" y="228" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607439351256" />
+    <state x="298" y="353" key="#com.intellij.tools.ToolEditorDialog" timestamp="1607439043742">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="298" y="353" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607439043742" />
+    <state x="173" y="296" width="652" height="671" key="EditFileWatcherDialog" timestamp="1607439362367">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="173" y="296" width="652" height="671" key="EditFileWatcherDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607439362367" />
+    <state x="279" y="277" key="FileChooserDialogImpl" timestamp="1607439274467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="279" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607439274467" />
+    <state x="372" y="423" key="Github.ShareDialog" timestamp="1607181888720">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="372" y="423" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607181888720" />
+    <state x="0" y="167" key="SettingsEditor" timestamp="1607457108334">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="167" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607457108334" />
+    <state x="72" y="252" key="Vcs.Push.Dialog.v2" timestamp="1607181940488">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="72" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607181940488" />
+    <state x="1096" y="283" width="974" height="1047" key="dock-window-1" timestamp="1607446840145">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1096" y="283" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1607446840145" />
+    <state x="1096" y="244" key="run.anything.popup" timestamp="1607453641968">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607453641968" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607282170793">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607282170793" />
+  </component>
+</project>
