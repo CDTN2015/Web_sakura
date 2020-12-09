@@ -10,7 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af14e4bb-e2d4-488d-9df7-f05aee76ff65" name="默认的" comment="" />
+    <list default="true" id="af14e4bb-e2d4-488d-9df7-f05aee76ff65" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/passport/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/passport/Register.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +77,8 @@
       <workItem from="1607321754003" duration="27554000" />
       <workItem from="1607446745483" duration="8652000" />
       <workItem from="1607455510746" duration="720000" />
-      <workItem from="1607457064166" duration="44000" />
+      <workItem from="1607457064166" duration="119000" />
+      <workItem from="1607481961655" duration="6186000" />
     </task>
     <servers />
   </component>
@@ -119,10 +123,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="279" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607439274467" />
-    <state x="372" y="423" key="Github.ShareDialog" timestamp="1607181888720">
+    <state x="372" y="423" key="Github.ShareDialog" timestamp="1607457135723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="372" y="423" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607181888720" />
+    <state x="372" y="423" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607457135723" />
+    <state x="751" y="134" key="Github.UntrackedFilesDialog" timestamp="1607457145530">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="751" y="134" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607457145530" />
     <state x="0" y="167" key="SettingsEditor" timestamp="1607457108334">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

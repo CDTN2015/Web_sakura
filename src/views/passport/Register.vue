@@ -2,26 +2,26 @@
   <div class="register">
     <v-container class="ma-16">
       <v-card class="mx-auto" max-width="400" max-height="800" tile color="grey lighten-4">
-        <v-row align="center" dense>
-          <v-col class="justify-center ml-16" cols="12" sm="8">
+        <v-row align="center" no-gutters>
+          <v-col class="ml-16" cols="12" sm="8">
             <div class="blue--text font-weight-black mx-12 my-4" style="font-size: 2rem">REGISTER</div>
           </v-col>
 
-          <v-col class="ml-8" cols="12" sm="5">
-            <v-text-field :rules="[rules.required, rules.min]" label="User Name" hint="Numbers, characters and _"
-                          class="input-group--focused"></v-text-field>
+          <v-col class="ml-16" cols="12" sm="8">
+            <v-text-field :rules="[rules.required, rules.usr_max, rules.usr_min, rules.username]" label="User Name"
+                          hint="Numbers, characters and _" counter="18" class="input-group--focused"></v-text-field>
           </v-col>
-          <v-col class="ml-1" cols="12" sm="5">
-            <v-text-field :rules="[rules.required, rules.min]" label="True Name" hint="Type whatever you want"
-                          class="input-group--focused"></v-text-field>
+          <v-col class="ml-16" cols="12" sm="8">
+            <v-text-field :rules="[rules.required]" label="True Name" hint="Type whatever you want"
+                          counter class="input-group--focused"></v-text-field>
           </v-col>
 
-          <v-col class="ml-8" cols="12" sm="5">
+          <v-col class="ml-16" cols="12" sm="8">
             <v-text-field :append-icon="show_pwd ? 'mdi-eye' : 'mdi-eye-off'" :rules="[rules.required, rules.min]"
                           :type="show_pwd ? 'text' : 'Password'" label="Password" hint="As complex as you want"
                           class="input-group--focused" @click:append="show_pwd = !show_pwd"></v-text-field>
           </v-col>
-          <v-col class="ml-1" cols="12" sm="5">
+          <v-col class="ml-16" cols="12" sm="8">
             <v-text-field :append-icon="show_pwd ? 'mdi-eye' : 'mdi-eye-off'" :rules="[rules.required, rules.min]"
                           :type="show_pwd ? 'text' : 'Password'" label="Password Again"
                           class="input-group--focused" @click:append="show_pwd = !show_pwd"></v-text-field>
@@ -38,7 +38,7 @@
           </v-col>
 
           <v-col class="ml-8" cols="12" sm="6">
-            <v-text-field :rules="[rules.required, rules.min]" label="Phone Number" hint="11 numbers without -"
+            <v-text-field :rules="[rules.required, rules.tel]" label="Phone Number"
                           class="input-group--focused"></v-text-field>
           </v-col>
           <v-col class="ml-2" cols="12" sm="4">
@@ -84,6 +84,18 @@ export default {
       watch: {},
       rules: {
         required: value => !!value || 'Required.',
+        username: value => {
+          //4-18 Number, character, _
+          const pattern = /^\w{4,18}$/
+          return pattern.test(value) || 'Invalid username'
+        },
+        tel: value => {
+          //8-18 Number, character, _
+          const pattern = /^\w{8,18}$/
+          return pattern.test(value) || 'Invalid password'
+        },
+        usr_min: value => value.length >= 4 || 'More than 4 characters',
+        usr_max: value => value.length <= 18 || 'Less than 18 characters',
         min: v => v.length >= 8 || 'Min 8 characters',
         geshi: value => {
           const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
