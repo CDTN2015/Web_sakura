@@ -11,14 +11,13 @@
 
             <v-col class="ml-16" cols="12" sm="8">
               <v-text-field v-model="user_name" :rules="[rules.user_name]" label="用户昵称" maxlength="18" counter="18"
-                            hint="数字，字母，下划线" class="input-group--focused"></v-text-field>
+                            class="input-group--focused"></v-text-field>
             </v-col>
 
             <v-col class="ml-16" cols="12" sm="8">
               <v-text-field v-model="password" :append-icon="show_pwd ? 'mdi-eye' : 'mdi-eye-off'"
-                            :rules="[rules.pwd]" maxlength="18" counter="18"
-                            :type="show_pwd ? 'text' : 'Password'" label="密码" hint="数字，字母，下划线"
-                            class="input-group--focused" @click:append="show_pwd = !show_pwd"></v-text-field>
+                            :rules="[rules.pwd]" maxlength="18" counter="18" :type="show_pwd ? 'text' : 'Password'"
+                            label="密码" class="input-group--focused" @click:append="show_pwd = !show_pwd"></v-text-field>
             </v-col>
           </v-row>
         </v-form>
