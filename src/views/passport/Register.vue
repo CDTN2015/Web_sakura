@@ -10,9 +10,7 @@
             </v-col>
 
             <v-col class="ml-16" cols="12" sm="8">
-              <v-text-field v-model="user_name" :rules="[rules.user_name]" label="用户昵称"
-                            maxlength="18"
-                            counter="18"
+              <v-text-field v-model="user_name" :rules="[rules.user_name]" label="用户昵称" maxlength="18" counter="18"
                             hint="数字，字母，下划线" class="input-group--focused"></v-text-field>
             </v-col>
             <v-col class="ml-16" cols="12" sm="8">
@@ -83,7 +81,9 @@
   </div>
 </template>
 
-<script src="https://unpkg.com/axios/dist/axios.min.js">
+<script>
+import axios from 'axios'
+
 export default {
   name: "Register",
   data() {
@@ -119,8 +119,9 @@ export default {
             return '需要用户昵称'
           else if (value.length < 4)
             return '不能少于4位'
-          else if (!/^\w{8,18}$/.test(value))
+          else if (!/^\w{4,18}$/.test(value))
             return '只能包含字母、数字、下划线'
+          return true
         },
         real_name: value => !!value || '需要用户真实姓名',
         pwd: value => {
@@ -130,12 +131,14 @@ export default {
             return '不能少于8位'
           else if (!/^\w{8,18}$/.test(value))
             return '只能包含字母、数字、下划线'
+          return true
         },
         tel: value => {
-          if (!value)
+          if (!value || value.length < 11)
             return '需要联系方式'
-          else if (!(/^\d{1,11}$/).test(value))
+          else if (!/^\d{1,11}$/.test(value))
             return '只能是数字'
+          return true
         },
         card_num: function (num, card) {
           if (!num)
@@ -156,7 +159,6 @@ export default {
     verify: function () {
       if (this.$refs.form.validate()) {
         let fd = new FormData()
-
         let url = this.ip + "/api/user/register"
         fd.append('username', this.user_name)
         fd.append('password', this.password)
@@ -166,46 +168,22 @@ export default {
         fd.append('tel', this.phone)
         fd.append('description', this.description)
         fd.append('city', this.select_city.name)
+
+        this.$router.push({path: '/login'})
+
         let config = {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
         }
-        axios.get()
         axios.post(url, fd, config).then(res => {
           console.log(res)
           if (res.data.code === 200 && res.data.data.role === "manager") {
             console.log("注册成功");
+
           }
         })
-        /*var fd = new FormData();
-        var url = this.ip + "/api/user/login";
-        fd.append('username', this.usr);
-        fd.append('password', this.pwd);
-        let config = {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        }
-        axios.post(url, fd, config).then(res => {
-          console.log(res)
-          if (res.data.code == 200 && res.data.data.role == "manager") {
-            console.log("登录成功");
-            this.character = "manager";
-            this.GetRoomState();
-          }
-        })*/
       }
-      console.log(this.user_name)
-      console.log(this.password)
-      console.log(this.real_name)
-      console.log(this.select_card.value)
-      console.log(this.card_num)
-      console.log(this.phone)
-      console.log(this.description)
-      console.log(this.select_city.name)
-
-
     }
   },
 }

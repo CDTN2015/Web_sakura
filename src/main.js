@@ -4,7 +4,8 @@ import router from './router'
 import vuetify from './plugins/vuetify'
 import axios from 'axios'
 
-Vue.prototype.$http = axios
+Vue.prototype.axios = axios
+axios.defaults.baseURL = 'http://www.sample.com/'
 
 Vue.config.productionTip = false
 
