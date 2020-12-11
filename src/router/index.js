@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Passport from "@/views/passport/Passport.vue"
 import Login from "@/views/passport/Login"
 import Register from "@/views/passport/Register"
-import MyCall from "@/views/User/MyCall";
+import MyCall from "@/views/user/MyCall";
 
 Vue.use(VueRouter)
 

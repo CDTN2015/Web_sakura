@@ -12,7 +12,15 @@
   <component name="ChangeListManager">
     <list default="true" id="af14e4bb-e2d4-488d-9df7-f05aee76ff65" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/User/MyCall.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/MyCall.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/passport/Passport.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/passport/Passport.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/passport/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/passport/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/sources/images/icon.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +59,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Yucheng Jiang\Desktop\召集令\sakura\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -79,6 +87,10 @@
       <workItem from="1607455510746" duration="720000" />
       <workItem from="1607457064166" duration="119000" />
       <workItem from="1607481961655" duration="6186000" />
+      <workItem from="1607491820859" duration="736000" />
+      <workItem from="1607499467426" duration="11782000" />
+      <workItem from="1607582761171" duration="18649000" />
+      <workItem from="1607668276245" duration="7983000" />
     </task>
     <servers />
   </component>
@@ -111,6 +123,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="279" y="228" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607439351256" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607677918920">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607677918920" />
     <state x="298" y="353" key="#com.intellij.tools.ToolEditorDialog" timestamp="1607439043742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -131,25 +147,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="751" y="134" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607457145530" />
-    <state x="0" y="167" key="SettingsEditor" timestamp="1607457108334">
+    <state x="0" y="167" key="SettingsEditor" timestamp="1607612330712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="167" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607457108334" />
-    <state x="72" y="252" key="Vcs.Push.Dialog.v2" timestamp="1607181940488">
+    <state x="0" y="167" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607612330712" />
+    <state x="72" y="252" key="Vcs.Push.Dialog.v2" timestamp="1607678591834">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="72" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607181940488" />
-    <state x="1096" y="283" width="974" height="1047" key="dock-window-1" timestamp="1607446840145">
+    <state x="72" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607678591834" />
+    <state x="969" y="0" width="731" height="716" key="dock-window-1" timestamp="1607602605448">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1096" y="283" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1607446840145" />
-    <state x="1096" y="244" key="run.anything.popup" timestamp="1607453641968">
+    <state x="969" y="0" width="731" height="716" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1607602605448" />
+    <state x="1096" y="244" key="run.anything.popup" timestamp="1607611254078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607453641968" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607282170793">
+    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607611254078" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607676334610">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607282170793" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607676334610" />
   </component>
 </project>
