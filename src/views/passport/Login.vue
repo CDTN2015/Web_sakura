@@ -52,14 +52,11 @@
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
   name: "Login",
   data() {
     return {
-      ip: 'http://101.200.57.25:5002',
-
       show_pwd: false,
       valid: true,
 
@@ -74,25 +71,21 @@ export default {
   },
   methods: {
     verify: function () {
+      let _this = this
       if (this.$refs.form.validate()) {
-        let fd = new FormData()
-        let url = this.ip + "/api/user/login"
-        fd.append('username', this.user_name)
-        fd.append('password', this.password)
-
-        this.$router.push({path: '/register'})
-
-        let config = {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        }
-        axios.post(url, fd, config).then(res => {
-          console.log(res)
-          if (res.data.code === 200 && res.data.data.role === "manager") {
-            console.log("登录成功");
-          }
+        let rasPw = this.$getRsaCode(this.password);
+        this.$axios.post('/api' + "/login", {
+          'username': this.user_name,
+          'password': rasPw,
         })
+            .then(function (response) {
+              if(response.data.success){
+                _this.$router.push({path: '/home', name: 'Home', params: { username: _this.user_name }})
+              }
+            })
+            .catch(function (error) {
+              console.log(error)
+            })
       }
     },
   }

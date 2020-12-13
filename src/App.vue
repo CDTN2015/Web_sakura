@@ -1,6 +1,6 @@
 <template>
   <v-app class="grey light-4">
-    <v-img id="skins" src="./views/sources/images/hibiki.png" alt="hibiki" max-height="937px">
+    <v-img id="skins" src="https://raw.githubusercontent.com/CDTN2015/sources/master/img/arknigths2.jpg">
       <nav>
         <v-toolbar style="background-color: #66ccff">
           <v-toolbar-title class="text--uppercase white--text">
@@ -25,22 +25,9 @@
 
 export default {
   name: 'App',
-  components: {},
   data() {
-    return {
-      images: [
-        {name: 'hibiki', src: './sources/images/hibiki.png'},
-        {name: 'amiya', src: './sources/images/amiya.jpg'},
-      ]
-    }
+    return {}
   },
-
-  methods: {
-    change: function (){
-      //let temp = document.getElementById('skins');
-
-    }
-  }
 }
 
 </script>

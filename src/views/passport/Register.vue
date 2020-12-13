@@ -82,14 +82,11 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 export default {
   name: "Register",
   data() {
     return {
-      ip: 'http://101.200.57.25:5002',
-
       show_pwd: false,
       valid: true,
 
@@ -136,7 +133,7 @@ export default {
         tel: value => {
           if (!value || value.length < 11)
             return '需要联系方式'
-          else if (!/^\d{1,11}$/.test(value))
+          else if (!/^1[3-9]\d{9}$/.test(value))
             return '只能是数字'
           return true
         },
@@ -145,7 +142,7 @@ export default {
             return '需要' + card.type + '号'
           else if (!(/^[1-9]\d{5}(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/).test(num) && card.type === '居民身份证')
             return '不是标准' + card.type + '号'
-          else if (!(/^G\d{8}$/).test(num) && card.type === '护照')
+          else if (!(/^((1[45][0-9]{7})|([PpSs]\d{7})|([SsGg]\d{8})|((Gg|Tt|Ss|Ll|Qq|Dd|Aa|Ff)\d{8})|([HhMm]\d{8,10}))$/).test(num) && card.type === '护照')
             return '不是标准' + card.type + '号'
           else if (!(/^[\\u4E00-\\u9FA5](字第)([0-9a-zA-Z]{4,8})(号?)$/).test(num) && card.type === '军官证')
             return '不是标准' + card.type + '号'
@@ -157,33 +154,25 @@ export default {
   },
   methods: {
     verify: function () {
-      if (this.$refs.form.validate()) {
-        let fd = new FormData()
-        let url = this.ip + "/api/user/register"
-        fd.append('username', this.user_name)
-        fd.append('password', this.password)
-        fd.append('realName', this.real_name)
-        fd.append('creditType', this.select_card.value)
-        fd.append('creditValue', this.card_num)
-        fd.append('tel', this.phone)
-        fd.append('description', this.description)
-        fd.append('city', this.select_city.name)
-
         this.$router.push({path: '/login'})
-
-        let config = {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        }
-        axios.post(url, fd, config).then(res => {
-          console.log(res)
-          if (res.data.code === 200 && res.data.data.role === "manager") {
-            console.log("注册成功");
-
-          }
+        /*let rasPw = this.$getRsaCode(this.password);
+        console.log(rasPw)
+        this.$axios.post('/api' + "/register", {
+          'username': this.user_name,
+          'password': rasPw,
+          'realName': this.real_name,
+          'creditType': parseInt(this.select_card.value),
+          'creditValue': this.card_num,
+          'tel': this.phone,
+          'description': this.description,
+          'city': this.select_city.name,
         })
-      }
+            .then(function (response) {
+              console.log(response)
+            })
+            .catch(function (error) {
+              console.log(error)
+            })*/
     }
   },
 }

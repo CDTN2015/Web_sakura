@@ -11,7 +11,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af14e4bb-e2d4-488d-9df7-f05aee76ff65" name="默认的" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/views/Navbar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/user/Call.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/user/Find.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/user/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/user/Report.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/user/Response.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/passport/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/passport/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/passport/Passport.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/passport/Passport.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/passport/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/passport/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/sources/images/amiya.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/sources/images/hibiki.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/MyCall.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +59,7 @@
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -83,6 +101,9 @@
       <workItem from="1607582761171" duration="18649000" />
       <workItem from="1607668276245" duration="8321000" />
       <workItem from="1607679022700" duration="4939000" />
+      <workItem from="1607744335654" duration="6177000" />
+      <workItem from="1607776797974" duration="15975000" />
+      <workItem from="1607838471090" duration="9011000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607678702841</created>
@@ -149,6 +170,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="751" y="134" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607457145530" />
+    <state width="1899" height="272" key="GridCell.Tab.0.bottom" timestamp="1607778450877">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607778450877" />
+    <state width="1899" height="272" key="GridCell.Tab.0.center" timestamp="1607778450876">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="272" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607778450876" />
+    <state width="1899" height="272" key="GridCell.Tab.0.left" timestamp="1607778450876">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="272" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607778450876" />
+    <state width="1899" height="272" key="GridCell.Tab.0.right" timestamp="1607778450876">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="272" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607778450876" />
     <state x="0" y="167" key="SettingsEditor" timestamp="1607612330712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -161,10 +198,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="780" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607678772559" />
-    <state x="969" y="0" width="731" height="716" key="dock-window-1" timestamp="1607602605448">
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1607780564311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="969" y="0" width="731" height="716" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1607602605448" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1607780564311" />
     <state x="740" y="413" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1607708374054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -173,9 +210,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607611254078" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607676334610">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607843864499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607676334610" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607843864499" />
   </component>
 </project>
