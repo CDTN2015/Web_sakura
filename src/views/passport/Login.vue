@@ -4,16 +4,13 @@
       <v-card class="mx-auto" max-width="400" max-height="800" tile color="grey lighten-4">
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-row align="center" dense>
-
             <v-col class="ml-16" cols="12" sm="8">
               <div class="blue--text font-weight-black ml-16 my-4" style="font-size: 2rem">用户登录</div>
             </v-col>
-
             <v-col class="ml-16" cols="12" sm="8">
               <v-text-field v-model="user_name" :rules="[rules.user_name]" label="用户昵称" maxlength="18" counter="18"
                             class="input-group--focused"></v-text-field>
             </v-col>
-
             <v-col class="ml-16" cols="12" sm="8">
               <v-text-field v-model="password" :append-icon="show_pwd ? 'mdi-eye' : 'mdi-eye-off'"
                             :rules="[rules.pwd]" maxlength="18" counter="18" :type="show_pwd ? 'text' : 'Password'"
@@ -21,7 +18,6 @@
             </v-col>
           </v-row>
         </v-form>
-
         <v-row align="center" dense>
           <v-col class="ml-16" cols="12" sm="12">
             <v-btn rounded @click="verify" color="blue" width="280">
@@ -35,7 +31,6 @@
               <div class="font-weight-black" style="font-size: 1rem">注册</div>
             </v-btn>
           </v-col>
-
           <v-col class="ml-16" cols="12" sm="12">
             <div class="grey--text ml-16" style="font-size: 0.75rem">Build by CDTN2015,
               <a href="https://github.com/CDTN2015">GitHub</a>
@@ -44,7 +39,6 @@
               Telecommunications.
             </div>
           </v-col>
-
         </v-row>
       </v-card>
     </v-container>
@@ -52,7 +46,6 @@
 </template>
 
 <script>
-
 export default {
   name: "Login",
   data() {
@@ -74,13 +67,23 @@ export default {
       let _this = this
       if (this.$refs.form.validate()) {
         let rasPw = this.$getRsaCode(this.password);
-        this.$axios.post('/api' + "/login", {
+        this.$axios.post('/api/login', {
           'username': this.user_name,
           'password': rasPw,
         })
             .then(function (response) {
-              if(response.data.success){
-                _this.$router.push({path: '/home', name: 'Home', params: { username: _this.user_name }})
+              if (response.data.success) {
+                console.log(response)
+                console.log("登录成功")
+                //获取当前时间
+                let date = new Date()
+                let expiresDays = 10
+                //将date设置为10天以后的时间
+                date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000)
+                //将userId和userName两个cookie设置为10天后过期
+                document.cookie = "username=" + _this.user_name + "; expires=" + date.toUTCString()
+                _this.$router.push({path: '/home', name: 'Home'})//, params: {username: _this.user_name}})
+
               }
             })
             .catch(function (error) {

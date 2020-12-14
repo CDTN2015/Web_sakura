@@ -17,12 +17,6 @@ fuaFECNsNb4+Vn7hsQIDAQAB';
 
 Vue.prototype.$axios = axios
 axios.defaults.baseURL = '/api'
-/*axios.interceptors.request.use((req) =>{
-  if(req.method === 'post'){
-    req.data = qs.stringify(req.data)
-  }
-  return req
-},(error) => Promise.reject(error))*/
 
 Vue.config.productionTip = false
 

@@ -88,7 +88,7 @@ export default {
   data() {
     return {
       show_pwd: false,
-      valid: true,
+      valid: false,
 
       user_name: null,
       real_name: null,
@@ -154,10 +154,10 @@ export default {
   },
   methods: {
     verify: function () {
-        this.$router.push({path: '/login'})
-        /*let rasPw = this.$getRsaCode(this.password);
-        console.log(rasPw)
-        this.$axios.post('/api' + "/register", {
+      let _this = this
+      if(this.$refs.form.validate()){
+        let rasPw = this.$getRsaCode(this.password);
+        this.$axios.post('/api/register', {
           'username': this.user_name,
           'password': rasPw,
           'realName': this.real_name,
@@ -169,10 +169,14 @@ export default {
         })
             .then(function (response) {
               console.log(response)
+              console.log("注册成功")
+              _this.$router.push({path: '/login'})
             })
             .catch(function (error) {
               console.log(error)
-            })*/
+            })
+      }
+
     }
   },
 }

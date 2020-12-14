@@ -24,19 +24,22 @@
 export default {
   name: "Navbar",
   created() {
-    /*console.log(typeof this.$route.params.username)
-    if(typeof this.$route.params.username === 'undefined'){
+    let str_cookie = document.cookie
+    let arr_cookie = str_cookie.split("; ")
+    let temp = arr_cookie[0].split("=")
+    if(typeof temp[1] === 'undefined'){
+      console.log("用户未登录")
       this.$router.push({path: '/'})
     }
-   else{
-      this.user_name = this.$route.params.username
+    else{
+      console.log("检测到保存的用户数据")
+      this.user_name = temp[1]
       console.log(this.user_name)
-    }*/
+    }
   },
   data() {
     return {
-      //user_name: null,
-      user_name: "CDTN2015",
+      user_name: null,
       items: [
         {title: '用户信息管理', icon: 'home', link: '/home', name: 'Home'},
         {title: '召集令信息查询', icon: 'find_in_page', link: '/find', name: 'Find'},

@@ -11,24 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af14e4bb-e2d4-488d-9df7-f05aee76ff65" name="默认的" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/views/Navbar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/user/Call.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/user/Find.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/user/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/user/Report.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/user/Response.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/passport/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/passport/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/passport/Passport.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/passport/Passport.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/passport/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/passport/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/sources/images/amiya.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/sources/images/hibiki.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/user/MyCall.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/Call.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/Call.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/Find.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/Find.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +93,8 @@
       <workItem from="1607679022700" duration="4939000" />
       <workItem from="1607744335654" duration="6177000" />
       <workItem from="1607776797974" duration="15975000" />
-      <workItem from="1607838471090" duration="9011000" />
+      <workItem from="1607838471090" duration="33961000" />
+      <workItem from="1607913049421" duration="12384000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607678702841</created>
@@ -112,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607678702841</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1607848167969</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607848167969</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,14 +140,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="372" y="402" key="#ESLint/0.0.1920.1040@0.0.1920.1040" timestamp="1607182026318" />
+    <state x="685" y="339" key="#Notifications" timestamp="1607914235413">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="685" y="339" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1607914235413" />
     <state x="279" y="228" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1607439351256">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="279" y="228" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607439351256" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607677918920">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607920793821">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607677918920" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607920793821" />
     <state x="298" y="353" key="#com.intellij.tools.ToolEditorDialog" timestamp="1607439043742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -190,10 +192,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="167" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607612330712" />
-    <state x="300" y="245" key="Vcs.Push.Dialog.v2" timestamp="1607678936605">
+    <state x="300" y="245" key="Vcs.Push.Dialog.v2" timestamp="1607876398435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="300" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607678936605" />
+    <state x="300" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607876398435" />
     <state x="780" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607678772559">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -206,13 +208,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="413" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607708374054" />
-    <state x="1096" y="244" key="run.anything.popup" timestamp="1607611254078">
+    <state x="1096" y="244" key="run.anything.popup" timestamp="1607920685804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607611254078" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607843864499">
+    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607920685804" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607922620686">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607843864499" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607922620686" />
   </component>
 </project>

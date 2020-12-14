@@ -10,6 +10,7 @@ module.exports = {
         },
       },
     },
+    port: "4040",
   },
   transpileDependencies: ["vuetify"],
 };
