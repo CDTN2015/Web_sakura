@@ -28,6 +28,11 @@ export default {
   data() {
     return {}
   },
+  methods: {
+    home: function (){
+      this.$router.push({path: '/', name: 'Passport'})
+    }
+  }
 }
 
 </script>

@@ -224,7 +224,7 @@ export default {
     callResponse: function (value) {
       let _this = this
       if(this.$refs.form.validate()){
-        this.$axios.post('/api' + "/publishCallResponse", {
+        this.$axios.post('/api/publishCallResponse', {
           "callId": value.id,
           "description": this.description
         })

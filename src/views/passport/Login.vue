@@ -26,11 +26,19 @@
             </v-btn>
           </v-col>
           <v-col class="ml-16" cols="12" sm="12">
+            <v-btn rounded @click="verify_admin" color="blue" width="280">
+              <v-icon left color="white">login</v-icon>
+              <div class="white--text font-weight-black" style="font-size: 1rem">管理员入口</div>
+            </v-btn>
+          </v-col>
+          <v-col class="ml-16" cols="12" sm="12">
             <v-btn rounded link to="/register" color="grey lighten-2" width="280">
               <v-icon left>assignment</v-icon>
               <div class="font-weight-black" style="font-size: 1rem">注册</div>
             </v-btn>
           </v-col>
+
+
           <v-col class="ml-16" cols="12" sm="12">
             <div class="grey--text ml-16" style="font-size: 0.75rem">Build by CDTN2015,
               <a href="https://github.com/CDTN2015">GitHub</a>
@@ -86,6 +94,31 @@ export default {
               console.log(error)
             })
       }
+    },
+    verify_admin: function () {
+      //let _this = this
+      this.$router.push({path: '/admin', name: 'Admin'})
+      // if (this.$refs.form.validate()) {
+      //   let rasPw = this.$getRsaCode(this.password);
+      //   this.$axios.post('/api/login', {
+      //     'username': this.user_name,
+      //     'password': rasPw,
+      //   })
+      //       .then(function (response) {
+      //         if (response.data.success) {
+      //           console.log(response)
+      //           console.log("登录成功")
+      //           let date = new Date()
+      //           let expiresDays = 10
+      //           date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000)
+      //           document.cookie = "username=" + _this.user_name + "; expires=" + date.toUTCString()
+      //           _this.$router.push({path: '/home', name: 'Home'})
+      //         }
+      //       })
+      //       .catch(function (error) {
+      //         console.log(error)
+      //       })
+      // }
     },
   }
 }

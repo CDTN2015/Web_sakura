@@ -11,15 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af14e4bb-e2d4-488d-9df7-f05aee76ff65" name="默认的" comment="update">
-      <change afterPath="$PROJECT_DIR$/example.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/admin.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/passport/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/passport/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/passport/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/passport/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/user/Call.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/Call.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/user/Find.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/Find.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/user/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/user/Response.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/Response.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,17 +67,6 @@
       <recent name="C:\Users\Yucheng Jiang\Desktop\召集令\sakura\src\sources" />
     </key>
   </component>
-  <component name="RunAnythingCache">
-    <myKeys>
-      <visibility group="Grunt tasks" flag="true" />
-      <visibility group="Gulp tasks" flag="true" />
-      <visibility group="Node.js" flag="true" />
-      <visibility group="Recent projects" flag="true" />
-      <visibility group="Run configurations" flag="true" />
-      <visibility group="npm" flag="true" />
-      <visibility group="yarn" flag="true" />
-    </myKeys>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -108,7 +94,7 @@
       <workItem from="1607776797974" duration="15975000" />
       <workItem from="1607838471090" duration="33961000" />
       <workItem from="1607913049421" duration="30530000" />
-      <workItem from="1607958173904" duration="16582000" />
+      <workItem from="1607958173904" duration="26105000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607678702841</created>
@@ -131,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607928650635</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <created>1608010555227</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608010555227</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,10 +207,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="167" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607612330712" />
-    <state x="300" y="245" key="Vcs.Push.Dialog.v2" timestamp="1607928658601">
+    <state x="300" y="245" key="Vcs.Push.Dialog.v2" timestamp="1608010563010">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="300" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607928658601" />
+    <state x="300" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608010563010" />
     <state x="780" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607678772559">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -230,13 +223,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="413" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607708374054" />
-    <state x="1096" y="244" key="run.anything.popup" timestamp="1607920685804">
+    <state x="1096" y="244" key="run.anything.popup" timestamp="1608014058831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607920685804" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607922620686">
+    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608014058831" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608013537991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607922620686" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608013537991" />
   </component>
 </project>

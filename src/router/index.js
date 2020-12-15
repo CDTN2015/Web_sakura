@@ -8,6 +8,7 @@ import Find from "@/views/user/Find"
 import Call from "@/views/user/Call"
 import Response from "@/views/user/Response"
 import Report from "@/views/user/Report"
+import Admin from "@/views/admin"
 
 Vue.use(VueRouter)
 
@@ -46,6 +47,11 @@ const routes = [
         path: '/report',
         name: 'Report',
         component: Report
+    },
+    {
+        path: '/admin',
+        name: 'Admin',
+        component: Admin
     },
     {
         path: '*',
