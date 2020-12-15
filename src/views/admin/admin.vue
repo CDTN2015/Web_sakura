@@ -1,7 +1,8 @@
 <template>
-  <div class="find">
-    <Navbar></Navbar>
+  <div class="admin">
+    <Navbar_admin></Navbar_admin>
     <v-card class="mx-auto" tile color="grey lighten-4" max-width="800">
+      <v-card-title class="headline">召集令列表</v-card-title>
       <v-row dense>
         <v-col class="ml-8" cols="8" sm="3">
           <v-text-field label="召集令名称" v-model="name"
@@ -102,32 +103,73 @@
                 <div class="caption grey--text">上次修改时间</div>
                 <div>{{ detail_card.lastModifyTime.substr(0, 10) }}</div>
                 <div>{{ detail_card.lastModifyTime.substr(10, 9) }}</div>
-
               </v-col>
-
             </v-row>
           </v-layout>
           <v-card-actions>
-            <v-form ref="form" v-model="valid" lazy-validation>
-            <v-text-field v-show="dialog_r&&!this.detail_card.isMine" :rules="[rules.no_empty]" label="申请信息" v-model="description" class="input-group--focused"></v-text-field>
-            </v-form>
             <v-spacer></v-spacer>
             <v-btn color="green darken-1" text @click="dialog = false">再看看</v-btn>
-            <v-btn v-show="dialog_r&&!this.detail_card.isMine" color="green darken-1" text @click="callResponse(detail_card)">接令</v-btn>
           </v-card-actions>
         </v-card>
 
       </v-dialog>
     </v-row>
 
+    <!--用户信息表-->
+    <v-card class="mx-auto" tile color="grey lighten-4" max-width="800">
+      <v-card-title class="headline">用户列表</v-card-title>
+      <v-card flat class="pa-6" color="grey lighten-4" v-for="item in info_list" :key="item.index">
+
+        <v-row dense>
+
+          <v-col clos="12" sm="4">
+            <div class="caption grey--text">用户昵称</div>
+            <div>{{ item.username }}</div>
+          </v-col>
+          <v-col clos="12" sm="4">
+            <div class="caption grey--text">真实姓名</div>
+            <div>{{ item.realName }}</div>
+          </v-col>
+          <v-col clos="12" sm="4">
+            <div class="caption grey--text">所在城市</div>
+            <div>{{ item.city }}</div>
+          </v-col>
+          <v-col clos="12" sm="4">
+            <div class="caption grey--text">个人简介</div>
+            <div>{{ item.description }}</div>
+          </v-col>
+          <v-col clos="12" sm="4">
+            <div class="caption grey--text">联系方式</div>
+            <div>{{ item.tel.substr(0, 3) }}-XXXX-{{ item.tel.substr(7, 4) }}</div>
+          </v-col>
+          <v-col clos="12" sm="4">
+            <div class="caption grey--text">用户等级</div>
+            <div>{{ item.userLevel }}</div>
+          </v-col>
+          <v-col clos="12" sm="4">
+            <div class="caption grey--text">注册时间</div>
+            <div>{{ item.registrationTime.substr(0, 10) }}{{ item.registrationTime.substr(10, 9) }}</div>
+          </v-col>
+          <v-col clos="12" sm="4">
+            <div class="caption grey--text">证件类别</div>
+            <div>{{ user_cards[item.creditType].type }}</div>
+          </v-col>
+          <v-col clos="12" sm="4">
+            <div class="caption grey--text">证件号码</div>
+            <div>{{ item.creditValue.substr(0, 4) }}**********{{ item.creditValue.substr(12, 4) }}**</div>
+          </v-col>
+        </v-row>
+        <v-divider></v-divider>
+      </v-card>
+    </v-card>
   </div>
 </template>
 
 <script>
-import Navbar from "@/views/user/Navbar"
-
+import Navbar_admin from "@/views/admin/Navbar_admin"
 export default {
-  name: "Find",
+  name: "admin",
+  components: {Navbar_admin},
   created() {
     let _this = this
     this.$axios.post('/api/getSpecificCallsMeta', {
@@ -145,16 +187,28 @@ export default {
         .catch(function (error) {
           console.log(error)
         })
+    this.$axios.get('/api/getAllUserInfo', {})
+        .then(function (response) {
+          console.log(response)
+          for (let i = 0; i < response.data.allUserInfo.length; i++) {
+            response.data.allUserInfo[i].lastModifyTime = new Date(response.data.allUserInfo[i].lastModifyTime).toLocaleDateString().replace(/\//g, "-") + " " + new Date(response.data.allUserInfo[i].lastModifyTime).toTimeString().substr(0, 8)
+            response.data.allUserInfo[i].registrationTime = new Date(response.data.allUserInfo[i].registrationTime).toLocaleDateString().replace(/\//g, "-") + " " + new Date(response.data.allUserInfo[i].registrationTime).toTimeString().substr(0, 8)
+            _this.info_list.push(response.data.allUserInfo[i])
+          }
+          console.log("用户信息获取成功")
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
   },
   data() {
     return {
-      dialog: false,
-      dialog_r: false,
       checkbox: false,
-      valid: false,
+      dialog: false,
 
       name: null,
-      description: "我来接令",
+      list: [],
+      info_list: [],
       select_card: {type: '（空）', color: 'green lighten-4', value: '-1'},
       detail_card: {
         "id": null,
@@ -170,7 +224,6 @@ export default {
         "status": 2,
         "isMine": false
       },
-      list: [],
       cards: [
         {type: '（空）', value: '-1'},
         {type: '技术交流', value: '0'},
@@ -186,17 +239,17 @@ export default {
         {type: '取消', value: '3', name: 'canceled'},
         {type: '失败', value: '4', name: 'failed'},
       ],
-      rules: {
-        no_empty: value => !!value || '不能为空',
-      }
+      user_cards: [
+        {type: '居民身份证', color: 'blue lighten-4', value: '0'},
+        {type: '护照', color: 'red lighten-4', value: '1'},
+        {type: '军官证', color: 'green lighten-4', value: '2'},
+      ],
     }
   },
-  components: {Navbar},
   methods: {
     detail: function (value) {
       this.dialog = true
       let _this = this
-      console.log(value.id)
       this.$axios.post('/api/getCallDetails', {
         id: value.id
       })
@@ -221,28 +274,11 @@ export default {
             console.log(error)
           })
     },
-    callResponse: function (value) {
-      let _this = this
-      if(this.$refs.form.validate()){
-        this.$axios.post('/api/publishCallResponse', {
-          "callId": value.id,
-          "description": this.description
-        })
-            .then(function (response) {
-              console.log(response)
-              console.log(" 申请召集令成功")
-              _this.dialog = false
-            })
-            .catch(function (error) {
-              console.log(error)
-            })
-      }
-    },
     find: function () {
       let _this = this
       let data = {
         'from': 0,
-        'to': 20,
+        'to': 100,
         'onlyMine': false,
         'active': this.checkbox
       }
@@ -263,9 +299,7 @@ export default {
             for (let i = 0; i < response.data.calls.length; i++) {
               _this.list.push(response.data.calls[i])
             }
-            //console.log(_this.list)
             console.log("查找成功")
-
           })
           .catch(function (error) {
             console.log(error)

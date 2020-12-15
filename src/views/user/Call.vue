@@ -232,7 +232,7 @@
 </template>
 
 <script>
-import Navbar from "@/views/Navbar"
+import Navbar from "@/views/user/Navbar"
 
 export default {
   name: "Call",
@@ -262,7 +262,6 @@ export default {
       dialog_d: false,//删除
       menu: false,
       modal: false,
-      menu2: false,
 
       date: new Date().toLocaleDateString().replace(/\//g, "-"),
       find_name: null,

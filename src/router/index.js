@@ -7,8 +7,8 @@ import Home from "@/views/user/Home"
 import Find from "@/views/user/Find"
 import Call from "@/views/user/Call"
 import Response from "@/views/user/Response"
-import Report from "@/views/user/Report"
-import Admin from "@/views/admin"
+import Report from "@/views/admin/Report"
+import Admin from "@/views/admin/admin"
 
 Vue.use(VueRouter)
 

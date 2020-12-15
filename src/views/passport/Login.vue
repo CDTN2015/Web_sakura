@@ -27,7 +27,7 @@
           </v-col>
           <v-col class="ml-16" cols="12" sm="12">
             <v-btn rounded @click="verify_admin" color="blue" width="280">
-              <v-icon left color="white">login</v-icon>
+              <v-icon left color="white">admin_panel_settings</v-icon>
               <div class="white--text font-weight-black" style="font-size: 1rem">管理员入口</div>
             </v-btn>
           </v-col>
@@ -82,7 +82,7 @@ export default {
             .then(function (response) {
               if (response.data.success) {
                 console.log(response)
-                console.log("登录成功")
+                console.log("用户登录成功")
                 let date = new Date()
                 let expiresDays = 10
                 date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000)
@@ -96,29 +96,28 @@ export default {
       }
     },
     verify_admin: function () {
-      //let _this = this
-      this.$router.push({path: '/admin', name: 'Admin'})
-      // if (this.$refs.form.validate()) {
-      //   let rasPw = this.$getRsaCode(this.password);
-      //   this.$axios.post('/api/login', {
-      //     'username': this.user_name,
-      //     'password': rasPw,
-      //   })
-      //       .then(function (response) {
-      //         if (response.data.success) {
-      //           console.log(response)
-      //           console.log("登录成功")
-      //           let date = new Date()
-      //           let expiresDays = 10
-      //           date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000)
-      //           document.cookie = "username=" + _this.user_name + "; expires=" + date.toUTCString()
-      //           _this.$router.push({path: '/home', name: 'Home'})
-      //         }
-      //       })
-      //       .catch(function (error) {
-      //         console.log(error)
-      //       })
-      // }
+      let _this = this
+      if (this.$refs.form.validate()) {
+        let rasPw = this.$getRsaCode(this.password);
+        this.$axios.post('/api/login', {
+          'username': this.user_name,
+          'password': rasPw,
+        })
+            .then(function (response) {
+              console.log(response)
+              if (response.data.success) {
+                console.log("管理员登录成功")
+                let date = new Date()
+                let expiresDays = 10
+                date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000)
+                document.cookie = "username=" + _this.user_name + "; expires=" + date.toUTCString()
+                _this.$router.push({path: '/admin', name: 'Admin'})
+              }
+            })
+            .catch(function (error) {
+              console.log(error)
+            })
+      }
     },
   }
 }

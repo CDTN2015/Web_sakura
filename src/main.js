@@ -17,7 +17,6 @@ fuaFECNsNb4+Vn7hsQIDAQAB';
 
 Vue.prototype.$axios = axios
 axios.defaults.baseURL = '/api'
-
 Vue.config.productionTip = false
 
 new Vue({

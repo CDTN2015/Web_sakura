@@ -44,7 +44,6 @@ export default {
         {title: '召集令信息查询', icon: 'find_in_page', link: '/find', name: 'Find'},
         {title: '我是令主', icon: 'add_task', link: '/call', name: 'Call'},
         {title: '查看令牌', icon: 'fact_check', link: '/response', name: 'Response'},
-        {title: '统计报表', icon: 'timeline', link: '/report', name: 'Report'},
       ],
     }
   }

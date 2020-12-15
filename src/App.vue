@@ -8,6 +8,11 @@
             <span class="font-weight-medium" style="font-size: 2rem">Calls</span>
           </v-toolbar-title>
           <v-spacer></v-spacer>
+          <v-btn color="blue" link :to="'/'">
+            <span class="white--text font-weight-black">返回欢迎页</span>
+            <v-icon right class="white--text">sensor_door</v-icon>
+          </v-btn>
+          <v-spacer></v-spacer>
           <v-btn color="blue" href="https://github.com/YuHover/Reward">
             <span class="white--text font-weight-black">联系我们</span>
             <v-icon right class="white--text">contact_page</v-icon>
