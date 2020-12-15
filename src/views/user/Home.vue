@@ -27,7 +27,7 @@
           </v-col>
 
           <v-col class="ml-2" cols="12" sm="6">
-            <v-btn rounded color="blue" width="180" @click="dialog_u = true">
+            <v-btn rounded color="blue" width="180" @click="modifyUserInfo">
               <v-icon left color="white">change_circle</v-icon>
               <div class="white--text font-weight-black" style="font-size: 1rem">修改个人信息</div>
             </v-btn>
@@ -56,7 +56,7 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="green darken-1" text @click="dialog_u = false">取消</v-btn>
-                <v-btn color="green darken-1" text @click="modifyUserInfo">修改</v-btn>
+                <v-btn color="green darken-1" text @click="pushUserInfo">修改</v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>
@@ -99,9 +99,8 @@ export default {
     this.$axios.post('/api/getUserInfo', {})
         .then(function (response) {
           console.log(response)
+          console.log("获取用户信息成功")
           _this.user_info = response.data
-          console.log(_this.user_info)
-
         })
         .catch(function (error) {
           console.log(error)
@@ -156,16 +155,49 @@ export default {
   components: {Navbar},
   methods: {
     modifyUserInfo: function () {
-      this.$refs.form.validate()
-      // console.log(this.phone)
-      // console.log(this.description)
-      // this.dialog_u = false
-
+      this.dialog_u = true
+      this.phone = this.user_info.tel
+      this.description = this.user_info.description
+    },
+    pushUserInfo: function () {
+      let _this = this
+      if(this.$refs.form.validate()){
+        this.$axios.post('/api/modifyUserInfo', {
+          'tel': this.phone,
+          'description': this.description,
+        })
+            .then(function (response) {
+              if (response.data.success) {
+                console.log(response)
+                console.log("修改用户信息成功")
+                _this.user_info.tel = _this.phone
+                _this.user_info.description = _this.description
+                _this.dialog_u = false
+              }
+            })
+            .catch(function (error) {
+              console.log(error)
+            })
+      }
     },
     modifyPassword: function () {
-      this.$refs.form.validate()
-      // console.log(this.password)
-      // this.dialog_p = false
+      let _this = this
+      if(this.$refs.form.validate()){
+        let rasPw = this.$getRsaCode(this.password);
+        this.$axios.post('/api/modifyPassword', {
+          'password': rasPw,
+        })
+            .then(function (response) {
+              if (response.data.success) {
+                console.log(response)
+                console.log("修改用户密码成功")
+                _this.dialog_p = false
+              }
+            })
+            .catch(function (error) {
+              console.log(error)
+            })
+      }
     }
   }
 }

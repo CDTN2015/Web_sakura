@@ -134,7 +134,7 @@ export default {
           if (!value || value.length < 11)
             return '需要联系方式'
           else if (!/^1[3-9]\d{9}$/.test(value))
-            return '只能是数字'
+            return '不是标准电话号'
           return true
         },
         card_num: function (num, card) {

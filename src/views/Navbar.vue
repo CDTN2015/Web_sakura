@@ -34,7 +34,6 @@ export default {
     else{
       console.log("检测到保存的用户数据")
       this.user_name = temp[1]
-      console.log(this.user_name)
     }
   },
   data() {
@@ -44,7 +43,7 @@ export default {
         {title: '用户信息管理', icon: 'home', link: '/home', name: 'Home'},
         {title: '召集令信息查询', icon: 'find_in_page', link: '/find', name: 'Find'},
         {title: '我是令主', icon: 'add_task', link: '/call', name: 'Call'},
-        {title: '我要接令', icon: 'fact_check', link: '/response', name: 'Response'},
+        {title: '查看令牌', icon: 'fact_check', link: '/response', name: 'Response'},
         {title: '统计报表', icon: 'timeline', link: '/report', name: 'Report'},
       ],
     }

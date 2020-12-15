@@ -2,28 +2,26 @@
   <div class="find">
     <Navbar></Navbar>
     <v-card class="mx-auto" tile color="grey lighten-4" max-width="800">
-      <v-form ref="form" v-model="valid" lazy-validation>
-        <v-row dense>
-          <v-col class="ml-8" cols="8" sm="3">
-            <v-text-field label="召集令名称" v-model="name"
-                          hint="模糊查询" class="input-group--focused"></v-text-field>
-          </v-col>
+      <v-row dense>
+        <v-col class="ml-8" cols="8" sm="3">
+          <v-text-field label="召集令名称" v-model="name"
+                        hint="模糊查询" class="input-group--focused"></v-text-field>
+        </v-col>
 
-          <v-col class="ml-8" cols="8" sm="2">
-            <v-select v-model="select_card" :items="cards" item-text="type"
-                      label="召集令类型" persistent-hint return-object></v-select>
-          </v-col>
-          <v-col class="ml-8" cols="8" sm="3">
-            <v-checkbox v-model="checkbox" label="只查询能加入的召集令"></v-checkbox>
-          </v-col>
-          <v-col class="ml-8 my-4" cols="8" sm="1">
-            <v-btn @click="find" color="blue">
-              <v-icon left color="white">assignment</v-icon>
-              <div class="font-weight-black white--text">查询</div>
-            </v-btn>
-          </v-col>
-        </v-row>
-      </v-form>
+        <v-col class="ml-8" cols="8" sm="2">
+          <v-select v-model="select_card" :items="cards" item-text="type"
+                    label="召集令类型" persistent-hint return-object></v-select>
+        </v-col>
+        <v-col class="ml-8" cols="8" sm="3">
+          <v-checkbox v-model="checkbox" :label="`查询策略:${checkbox? '仅有效信息' : '仅查询无效信息'}`"></v-checkbox>
+        </v-col>
+        <v-col class="ml-8 my-4" cols="8" sm="1">
+          <v-btn @click="find" color="blue">
+            <v-icon left color="white">assignment</v-icon>
+            <div class="font-weight-black white--text">查询</div>
+          </v-btn>
+        </v-col>
+      </v-row>
       <v-card flat class="pa-6" color="grey lighten-4" v-for="item in list" :key="item.id" @click="detail(item)">
         <v-layout row wrap :class="`mx-4 item ${status[item.status].name}`">
           <v-row>
@@ -92,23 +90,30 @@
               </v-col>
               <v-col clos="12" sm="4">
                 <div class="caption grey--text">发起时间</div>
-                <div>{{ detail_card.createTime }}</div>
+                <div>{{ detail_card.createTime.substr(0, 10) }}</div>
+                <div>{{ detail_card.createTime.substr(10, 9) }}</div>
               </v-col>
               <v-col clos="12" sm="4">
                 <div class="caption grey--text">截止时间</div>
-                <div>{{ detail_card.deadline }}</div>
+                <div>{{ detail_card.deadline.substr(0, 10) }}</div>
+                <div>{{ detail_card.deadline.substr(10, 9) }}</div>
               </v-col>
               <v-col clos="12" sm="4">
                 <div class="caption grey--text">上次修改时间</div>
-                <div>{{ detail_card.lastModifyTime }}</div>
+                <div>{{ detail_card.lastModifyTime.substr(0, 10) }}</div>
+                <div>{{ detail_card.lastModifyTime.substr(10, 9) }}</div>
+
               </v-col>
 
             </v-row>
           </v-layout>
           <v-card-actions>
+            <v-form ref="form" v-model="valid" lazy-validation>
+            <v-text-field v-show="dialog_r&&!this.detail_card.isMine" :rules="[rules.no_empty]" label="申请信息" v-model="description" class="input-group--focused"></v-text-field>
+            </v-form>
             <v-spacer></v-spacer>
             <v-btn color="green darken-1" text @click="dialog = false">再看看</v-btn>
-            <v-btn color="green darken-1" text @click="callResponse">接令</v-btn>
+            <v-btn v-show="dialog_r&&!this.detail_card.isMine" color="green darken-1" text @click="callResponse(detail_card)">接令</v-btn>
           </v-card-actions>
         </v-card>
 
@@ -125,17 +130,16 @@ export default {
   name: "Find",
   created() {
     let _this = this
-    this.$axios.post('/api' + "/getSpecificCallsMeta", {
+    this.$axios.post('/api/getSpecificCallsMeta', {
       'from': 0,
       'to': 100,
       'onlyMine': false
     })
         .then(function (response) {
-          //console.log(response)
+          console.log(response)
           for (let i = 0; i < response.data.calls.length; i++) {
             _this.list.push(response.data.calls[i])
           }
-          _this.total = response.data.total
           console.log("召集令初始化成功")
         })
         .catch(function (error) {
@@ -144,69 +148,29 @@ export default {
   },
   data() {
     return {
-      valid: false,
       dialog: false,
+      dialog_r: false,
       checkbox: false,
+      valid: false,
 
       name: null,
+      description: "我来接令",
       select_card: {type: '（空）', color: 'green lighten-4', value: '-1'},
       detail_card: {
-        "id": "kjuykjykyuky",
-        "ownerName": "Ceobe",
-        "type": 2,
-        "name": "罗德岛伙食调研",
-        "description": "管管傻狗，救救食堂",
-        "capacity": 20,
-        "deadline": "2021-09-10T12:30:00Z",
-        "image": "https://raw.githubusercontent.com/CDTN2015/sources/master/img/Arknights_avatar/80143041_8.jpg",
-        "createTime": "2021-07-01T07:10:30Z",
-        "lastModifyTime": "2021-07-03T09:12:23Z",
+        "id": null,
+        "ownerName": null,
+        "type": 1,
+        "name": null,
+        "description": null,
+        "capacity": 1,
+        "deadline": "1535374762785",
+        "image": null,
+        "createTime": "1535374762785",
+        "lastModifyTime": "1535374762785",
         "status": 2,
         "isMine": false
       },
-      list: [
-        {
-          "id": "kjuykjykyuky",
-          "ownerName": "Ceobe",
-          "type": 2,
-          "name": "罗德岛伙食调研",
-          "image": "https://raw.githubusercontent.com/CDTN2015/sources/master/img/Arknights_avatar/80143041_8.jpg",
-          "status": 2
-        },
-        {
-          "id": "dsadasdasdsad",
-          "ownerName": "Eyjafjalla",
-          "type": 0,
-          "name": "汐斯塔火山研究",
-          "image": "https://raw.githubusercontent.com/CDTN2015/sources/master/img/Arknights_avatar/78949689_7.jpg",
-          "status": 3
-        },
-        {
-          "id": "ggfsbhgfi",
-          "ownerName": "Bagpipe",
-          "type": 1,
-          "name": "哥伦比亚校区交流",
-          "image": "https://raw.githubusercontent.com/CDTN2015/sources/master/img/Arknights_avatar/82368676_2.jpg",
-          "status": 1
-        },
-        {
-          "id": "iensdiefnskshnfak",
-          "ownerName": "Puretream",
-          "type": 3,
-          "name": "维多利亚河流清洁",
-          "image": "https://raw.githubusercontent.com/CDTN2015/sources/master/img/Arknights_avatar/80143041_4.jpg",
-          "status": 4
-        },
-        {
-          "id": "limghuhynf",
-          "ownerName": "Swire",
-          "type": 4,
-          "name": "龙门市区一日游",
-          "image": " https://raw.githubusercontent.com/CDTN2015/sources/master/img/Arknights_avatar/79074291_8.jpg",
-          "status": 0
-        },
-      ],
-      total: 0,
+      list: [],
       cards: [
         {type: '（空）', value: '-1'},
         {type: '技术交流', value: '0'},
@@ -222,6 +186,9 @@ export default {
         {type: '取消', value: '3', name: 'canceled'},
         {type: '失败', value: '4', name: 'failed'},
       ],
+      rules: {
+        no_empty: value => !!value || '不能为空',
+      }
     }
   },
   components: {Navbar},
@@ -230,7 +197,7 @@ export default {
       this.dialog = true
       let _this = this
       console.log(value.id)
-      this.$axios.post('/api' + "/getCallDetails", {
+      this.$axios.post('/api/getCallDetails', {
         id: value.id
       })
           .then(function (response) {
@@ -241,39 +208,38 @@ export default {
             _this.detail_card.name = response.data.name
             _this.detail_card.description = response.data.description
             _this.detail_card.capacity = response.data.capacity
-            _this.detail_card.deadline = response.data.deadline
+            _this.detail_card.deadline = new Date(response.data.deadline).toLocaleDateString().replace(/\//g, "-") + " " + new Date(response.data.deadline).toTimeString().substr(0, 8)
             _this.detail_card.image = response.data.image
-            _this.detail_card.createTime = response.data.createTime
-            _this.detail_card.lastModifyTime = response.data.lastModifyTime
+            _this.detail_card.createTime = new Date(response.data.createTime).toLocaleDateString().replace(/\//g, "-") + " " + new Date(response.data.createTime).toTimeString().substr(0, 8)
+            _this.detail_card.lastModifyTime = new Date(response.data.lastModifyTime).toLocaleDateString().replace(/\//g, "-") + " " + new Date(response.data.lastModifyTime).toTimeString().substr(0, 8)
             _this.detail_card.status = response.data.status
             _this.detail_card.isMine = response.data.isMine
+            _this.dialog_r = _this.detail_card.status === 1 || _this.detail_card.status === 0
             console.log("召集令详情获取成功")
           })
           .catch(function (error) {
             console.log(error)
           })
-
-      // this.detail_card.id = value.id
-      // this.detail_card.ownerName = value.ownerName
-      // this.detail_card.type = value.type
-      // this.detail_card.name = value.name
-      // this.detail_card.image = value.image
-      // this.detail_card.status = value.status
-      // let timestamp= new Date(1472025255555)
-      // console.log(timestamp)
-      // let date2 = timestamp.toLocaleDateString().replace(/\//g, "-")+ " " + timestamp.toTimeString().substr(0, 8);
-      // console.log(date2)
     },
-    callResponse: function () {
-      this.dialog = false
-      console.log("接令")
-      console.log(this.detail_card.name)
+    callResponse: function (value) {
+      let _this = this
+      if(this.$refs.form.validate()){
+        this.$axios.post('/api' + "/publishCallResponse", {
+          "callId": value.id,
+          "description": this.description
+        })
+            .then(function (response) {
+              console.log(response)
+              console.log(" 申请召集令成功")
+              _this.dialog = false
+            })
+            .catch(function (error) {
+              console.log(error)
+            })
+      }
     },
     find: function () {
-      //let _this = this
-      console.log(this.name)
-      console.log(this.checkbox)
-      console.log(this.select_card.value)
+      let _this = this
       let data = {
         'from': 0,
         'to': 20,
@@ -281,18 +247,25 @@ export default {
         'active': this.checkbox
       }
       if (this.select_card.value !== '-1') {
-        data.type = this.select_card.value
+        data.type = parseInt(this.select_card.value)
       }
       if (this.name) {
         data.namePattern = this.name
       }
       console.log(data)
-      this.$axios.post('/api' + "/login", data)
+      this.$axios.post('/api/getSpecificCallsMeta', data)
           .then(function (response) {
-            if (response.data.success) {
-              console.log(response)
-              //_this.$router.push({path: '/home', name: 'Home', params: {username: _this.user_name}})
+            console.log(response)
+            for (let i = _this.list.length; i >= 0; i--) {
+              delete _this.list[i]
             }
+            _this.list.length = 0
+            for (let i = 0; i < response.data.calls.length; i++) {
+              _this.list.push(response.data.calls[i])
+            }
+            //console.log(_this.list)
+            console.log("查找成功")
+
           })
           .catch(function (error) {
             console.log(error)

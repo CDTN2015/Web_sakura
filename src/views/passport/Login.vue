@@ -75,15 +75,11 @@ export default {
               if (response.data.success) {
                 console.log(response)
                 console.log("登录成功")
-                //获取当前时间
                 let date = new Date()
                 let expiresDays = 10
-                //将date设置为10天以后的时间
                 date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000)
-                //将userId和userName两个cookie设置为10天后过期
                 document.cookie = "username=" + _this.user_name + "; expires=" + date.toUTCString()
-                _this.$router.push({path: '/home', name: 'Home'})//, params: {username: _this.user_name}})
-
+                _this.$router.push({path: '/home', name: 'Home'})
               }
             })
             .catch(function (error) {
